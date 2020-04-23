@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <title>Rozdzial 1-12</title>
+  <meta charset="UTF-8">
+  <!--script zewnetrzny-->
+  <script type="text/javascript" src="javaScript_1.js"></script>
+  <script type="text/javascript">
+   
+  </script>
+</head>
+<body>
+  <script>
+    document.write("<b>Tekst "+31+21+" lat. <br> nowa linia</b><br>");
+    document.write(" wynik to "+(31+21)+" i tyle powinno byc<br>");
+    //u document.write("Mozna stosowac znaczniki html")
+
+    //dziala ale upierdliwe
+    /*alert("nie ma to jak strona www"); //wyswietlanie komunikatu
+    confirm("chcesz isc dalej?"); //prosba o potwierdzenie
+    prompt("ile masz lat", "18"); //pytanie (tresc,wartosc domyslna)
+    //prompta mozna umiescic w document.write(prompt("ile masz lat", "18"));
+    //wynik pytania pojawi sie w document.write*/
+    
+    /*rozna typy liczbowe
+    0.1e2
+    066
+    0xf2
+    0b010
+    12
+    */
+    document.write("znaki specjalne \" \' \t itp.<br>");
+
+    //zmienne 
+    var wiek=prompt("podaj swoj wiek", 18);
+    document.write("twoj wiek to "+(wiek+10)+" lat<br>");
+
+    //operatory bitowe &-and/^-xor/|-or/<<-przesuniecie w lewo/>>>-w prawo
+    //z wypelnieniem zerami
+    //operatory logiczne !=/<=/||/&&/!
+
+    //warunki
+    if(wiek==25){
+      document.write("Masz 25 lat super!<br>");
+    }
+    else if(wiek==20){
+      document.write("jestes troche za mlody<br>");
+    }
+    else{
+      document.write("masz "+wiek+" lat i nw co z toba zrobic<br>");
+    }
+
+    document.write(((wiek==25)?"Mozesz grac":"Nie mozesz grac")+"<br>");
+    
+    //petle
+    for(var i=1; i<10; ++i){
+      if(i%2==0){
+        if(i==4){
+          continue; //przerywa jeden obieg petli
+        }
+        document.write(i+"/");
+      }
+    }
+
+    document.write("<br>twoj wiek to "+wiek);
+    while(wiek<100){
+      ++wiek;
+      if(wiek==33){
+        break;
+      }
+      document.write(">"+wiek);
+    }
+
+    document.write("<br>twoj wiek to "+wiek);
+    do{
+      --wiek;
+      document.write(">"+wiek);
+    }while(wiek>25)
+    
+    //funkcje i funkcja w zewnetrznym pliku
+    function dodaj(x, y){
+      return x+y;
+    }
+    document.write("<br>3+4="+dodaj(3,4)+"<br>");
+    document.write("3-4="+odejmij(3,4)+"<br>");
+
+    //funkcja z dowolna liczba argumentow
+    function bez_arg(){
+      document.write(arguments.length+"-[");
+      for(var i=0;i<arguments.length;i++){ 
+        document.write(arguments[i]+"/");
+      }
+      document.write("]<br>");
+    }
+    bez_arg(123,123,"12",12);
+
+    //obiekty
+    function osoba(imie,nazwisko){
+      this.nazwisko=nazwisko;
+      this.imie=imie;
+      //tworzenie funkcji w javascript dla obiektow
+      osoba.prototype.poka = function(){
+        document.write(this.imie+" "+this.nazwisko+"<br>")
+      }
+    }
+    kamil=new osoba("kamil", "mistic");
+    kamil.poka();
+
+    //tablice
+    var tablica = new Array(2,1,3,123,12,2);
+    var tab_in_tab = new Array(new Array(1,2),new Array(3,4));
+    document.write(tab_in_tab[1][1]);
+    tablica.reverse(); //odwraca kolejnosc tablicy
+    tablica.sort(); 
+    tablica.join(); //wyswitla cala tablice
+
+    /*
+    parseInt() -zamien na liczne
+    parseFloat() -z przecinkiem
+    eval() -zamienia text na komendy js
+    */
+
+    /*wlasciwosci i metody obiektu window
+    .self -biezace okno
+    .status
+    .name
+    .open("url","nazwa")
+    .close()
+    */
+
+    /*wlasciwosci i metody location
+    .href -caly adres dokumentu
+    .host -nazwa serwera
+    .hostname -nazwa serwera z portem
+    .assign("url") -wczytuje dokument o adresie
+    .reload(force) -wymusza restart strony
+    .replace("url") -zastepuje strone innym dokumentem
+    location.replace("http://google.com");
+    setTimeout("location.reload();", 10000);
+    //setTimeout("co", po ilu milisecundach)
+    */
+
+    /*document
+    .URL -adres dokumentu
+    .title
+    .location
+    .lastModified -data
+    .bgcolor
+    .links.length -ile jest linkow w dokumencie
+    .write("co")
+    .clear() -czysci okno
+    .close() -zamyka okno
+    .getElementById()
+    .getElementByTagName()
+    */
+    /*dzialaja ale musza byc albo w jakiejs funkcji albo pod zancznikami html
+    var bb=document.getElementById("login");
+    document.write(bb.value);
+
+    var bc=document.getElementById("jakis_znacznik_p").innerHTML = "zanuebue ten tekst";
+    */
+
+    /*string
+    .length
+    .blink() -miga
+    .bold() -pogrubiony
+    .italics() -pochylony
+    .strike() -skreslony
+    .sub()/.sup() -indeksy
+    .substring(od x, od y) -zwraca fragment
+    .fontColor(kolor)
+    .fontSize(rozmiar)
+    .toLowerCase() -nazmien na male
+    .toUpperCase() -duze
+    */
+
+    /*Date
+    var data_czas=new Date();
+    .getDay() -dzien tygodnia
+    .getDate() -zwraca dzien miesiaca
+    .getHours()
+    .getMinutes()
+    .getMonth()
+    .getSecound()
+    .getTime() -w milisecundach
+    .getFullYear()
+    .setDay() -ustaw dzien/reszre tez mozna ustawic tak jak wyzej
+    .toLocaleString() -zwraca date w formacie lokalnym
+    .parse(date) -liczba milisekund jaka uplynela od 1.01.1970
+    */
+
+    /*Math
+    .PI
+    .abs(x) -wartosc bezwzgledna
+    .ceil(x) -zaokraglanie w gore
+    .floor(x) -zaokraglanie w dol
+    .log(x)
+    .max(x,y)
+    .min(x,y)
+    .pow(x,y)
+    .round(x) -zaokragla od 0.5 w gore
+    .sqrt(x) -pierwiastek
+    .sin(x)
+    */
+
+    /*zdarzenia
+    onChange -zmiana wartosci w polu tekstowym
+    onClick
+    onDblClick
+    onFocus -uaktualninie elementu formularza
+    onKeyDown
+    onKeyPress
+    onKeyUp
+    onLoad -podczas ladowania strony
+    onMouseDown
+    onMouseOut
+    onMouseOver
+    onMouseUp
+    onReset
+    onSubmit
+    onUnload -zamkniecie dokumentu
+    onSelect
+    */
+    function kolor_tla(kol){
+      document.bgColor=kol;
+    }
+    function druk(){
+      window.print();
+    }
+   
+    //formularze
+    function logowanie(formula){
+      if(formula.login.value=="graw"&&
+      formula.pass.value=="zaq1"){
+        formula.wynik.value="udalo sie";
+      }
+      else{
+        formula.wynik.value="bledne dane";
+        formula.login.focus(); //zaznacz to jako bledne (ustaw tam kursor)
+      }
+    }
+    function Zres(){
+      document.getElementById("formul").reset();
+    }
+
+    //wyrazenia regularne
+    //oba zapisy poprawne
+    var wyr_1=new RegExp("[0-9]{2}");
+    var wyr_2=/[0-9]{2}/;
+    function spr(){
+      var form = document.getElementById('formul'),
+      wzory = {
+        "spraw" : /^[0-9a-zA-Z.]+@[0-9a-zA-Z\-]+\.[a-zA-Z]{2,3}$/,
+      };
+      //to chyba przeskakuje po kolejnych name w formularzu ktore ma zdefinowane we wzorze
+      for (var pole in wzory){
+        if(form[pole]){
+          if(!wzory[pole].test(form[pole].value)){
+            alert("Pole "+pole+" jest zle uzupelnione");
+            form[pole].style.background = 'yellow';
+            return false;
+          }else{
+            form[pole].style.background = 'white';
+          }
+        }
+      }
+      return true;
+    }
+  </script>
+  <p onmouseover="kolor_tla('red')" onmouseout="kolor_tla('white')">tlo jest czerwone</p>
+  <button onclick="druk()">druknij</button>
+
+  <form id="formul" name="formul" action="mailto:gase@gmail.com" method="POST" onsubmit="return logowanie(this);">
+    login:<input type="text" id="login" name="login" value="ew"><br>
+    haslo:<input type="password" name="pass"><br>
+    srawdze to:<input type="text" name="spraw"><br>
+    wynik:<input type="text" name="wynik" readonly><br>
+    <input type="button" value="sprawdz" onclick="logowanie(this.form)">
+    <input type="submit">  
+    <input type="button" value="res" onclick="Zres()">
+    <input type="button" value="sprawdze to" onclick="spr()">
+  </form>
+
+  <!--animacja_1-->
+  <style>
+  #napis{
+    position: absolute;
+    background-color: #3ff;
+    width: 210px;
+    float: left;
+  }
+  </style>
+  <script>
+  function animacyjka(){
+    var blok=document.getElementById('napis');
+    if(parseInt(blok.style.left)<50){
+      blok.style.left="250px";
+    }else{
+      blok.style.left=(parseInt(blok.style.left)-3)+"px";
+    }
+  }
+  //co ile ma sie wykonac
+  window.setInterval("animacyjka()",100);
+  </script>
+  <div id="napis" style="left: 300px;">Animowany napis</div>
+
+  <!--animacja_2-->
+  <script>
+  function przesu(){
+    var nap=document.formu.prze.value;
+    document.formu.prze.value=nap.substring(1)+nap.substring(0,1);
+  }
+  window.setInterval("przesu()",100);
+  </script>
+  <br><br>
+  <form name="formu">
+    <input name="prze" size=50 value="Zostan na tej stronie
+ a nie porzalujesz zobaczysz ze warto ">
+  </form>
+
+  <!--podmiana_grafik_1-->
+  <img src="obrazek_1.png" id="obrazek">
+  <script>
+    var obrazek_1 = new Image();
+    obrazek_1.src = "obrazek_1.png";
+
+    var obrazek_2 = new Image();
+    obrazek_2.src = "obrazek_2.png";
+
+    var obraz=document.getElementById("obrazek");
+    obraz.onmouseover=function(){
+      this.src=obrazek_2.src;
+    }
+    obraz.onmouseout=function(){
+      this.src=obrazek_1.src;
+    }
+  </script>
+
+  <!--podmiana_grafiki_2-->
+  <style>
+    #banerek{
+      width: 200px;
+      height: 180px;
+    }
+  </style>
+  <script>
+  window.onload=zamiana;
+  var nr=0;
+  function zamiana(){
+    var obrazy = new Array("obrazek_1.png","obrazek_2.png");
+    ++nr;
+    if(nr==obrazy.length){
+      nr=0;
+    }
+    document.getElementById("banerek").src=obrazy[nr];
+    setTimeout(zamiana, 2000);
+  }
+  
+  </script>
+  <img src="obrazek_1.png" id="banerek">
+
+</body>
+</html>
+
+<!--koniec 53 strona-->

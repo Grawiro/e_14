@@ -1,0 +1,185 @@
+<!--komentarz-->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Rozdzialy 1-14</title>
+    <meta charset="UTF-8">
+    <!--<meta content="pl">-->
+    <meta name="description" content="opis strony">
+    <meta name="keywords" content="wyraz_1, wyraz_2">
+    <meta name="author" content="Kamil Purcel">
+    <meta name="robots" content="all"> <!--indeksowanie strony all/none-->
+</head>
+<body>
+
+    <!--wyswietlanie tekstu-->
+    <!--wyswietlanie znakow specjalnych: &amp;/&#38;-->
+    <p>akapit</p>
+    <div>blok kodu</div>
+    <h1>tytul</h1>
+    <font size="132px" color="#0000FF" face="Courier New">sdasdas fsad </font><br>
+    <b>pogrubienie</b><br>
+    <u>podkreslenie</u><br>
+    <i>pochylenie</i><br>
+    <strike>skreslony</strike><br> <!--dziala-->
+    <blink>miganie</blink><br> <!--nie dziala-->
+    <sup>index gorny</sup>
+    <sub>index dolny</sub><br>
+
+    <!--pozycja-->
+    <center>wysrodkowanie</center>
+
+    <!--linia pozioma-->
+    <hr>
+    <hr size="20px" width="100px" color="orange" align="center">
+
+    
+    <!--listy-->
+    <ul type="disc"> <!--zmiana kolka disc/circle/square-->
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <ol type="1" start="6"> <!--zmiana numeracji 1/i/I/a/A-->
+        <li>1</li>
+        <li value="2">2</li>
+        <li>3</li>
+    </ol>
+
+    <!--zdjecia-->
+    <!--<body bgcolor="yellow"> zmiana koloru tla-->
+    <!--<body background="zdjecie.jpg"> zmiana obrazka tla-->
+    <p align="center">
+    <!--pozycja center/top/left/right/bottom/middle/-->
+        <img src="zdjecie.jpg" alt="tekst alternatywny" width="100px" height="25px">
+    </p>
+
+    <!--animacja tekstu-->
+    <marquee bgcolor="orange" behavior="scroll" direction="right"
+    scrollamount="10px" scrolldelay="10ms">tekst</marquee>
+    <!--behavior-przewijanie scroll/slide/alternate kierunek left/right/up/down
+        co ile przeskok/opoznienie w ms-->
+
+    <!--dzwiek na stronie-->
+    <bgsound src="plik.mp3" loop="infinite" volume="-5000" balance="0"></bgsound>
+    <!--loop-liczba powtorzen/volume -10000/0 i balance -10000/10000-->
+    <embed src="muzyka.mp3" width="300px" height="200px" autostart="false" volume="10"
+    controls="smallconsole">
+    <!--volume od 0-100/loop-true-false-ilosc/controls(przyciski)console/smallconsole/
+    (play/pause/stop/volume)button-->
+    <a href="muzyka.mp3">muzyka</a><br>
+    <audio src="muzyka.mp3" autoplay controls>
+    <!--autoplay/controls/loop/autobuffer/preload-ladowanie wraz ze strona-->
+        <!--<source src="muzyka.mp3" type="audio/mp3"> zamiast src w audio mozna dac tak-->
+        audio nie dziala
+    </audio>
+    <video src="filmik.mp4" height="500px" width="500px" poster="obraz.png" autoplay controls>
+        <!--poster to ikonka pokazywana przed zaladowaniem filmu-->
+        video nie dziala
+    </video>
+    <canvas id="can" height="300px" width="300px">
+        nie dziala
+    </canvas>
+    <script>
+    var canvas=document.getElementById("can");
+    var context=canvas.getContext('2d');
+    context.fillStyle = "red";
+    context.fillRect(50,50,50,50);
+    </script>
+
+    <!--tabele-->
+    <table border="1px" cellpadding="10px" cellspacing="5px" bordercolor="blue"
+    height="10%px" width="50%" align="left">
+    <!--border-obramowanie/cellpadding-marginesy w komurkach/
+        cellspacing-odstepy pomiedzy komurkami/mozna dac width i height
+        bordercolor-kolor obramowania-->
+        <caption>tytul tabeli</caption>
+        <tr bgcolor="green">
+            <td rowspan="2">1.1 i 2.1</td>
+            <!--laczenie komurek w pionie/tu takze mozna dodac width i height-->
+            <td>1.2</td>
+        </tr>
+        <tr background="zdjecie.jpg">
+            <td>2.2</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">3.1 i 3.2</td>
+            <!--laczenie komurek w poziomie-->
+        </tr>
+        <tr>
+            <th>4.1</th>
+            <!--th komurka naglowkowa-->
+            <td>4.2</td>
+        </tr>
+    </table>
+    teks obok tabeli
+    <br clear="left">
+    <!--wyswietlanie tekstu obok tabeli align left/right/all-->
+
+    <!--linki-->
+    <!--<body link="green" vlink="black" alink="red">
+        zmiana kolorow linkow-->
+    <a href="index.html">nazwa</a><br>
+    <a name="tutaj">etykieta</a><br>
+    <a href="#tutaj">przenies do etykiety</a><br>
+    <a href="http://www.google.com" target="_blank">google</a><br>
+    <!--_blank otwiera karte w nowym oknie-->
+    <a href="mailto: email@gmail.com">napiesz e-mail</a>
+    
+    <img src="obrazek.png" alt="alt" usemap="#nazwa_mapy">
+    <!--usemap-nazwa_mapy-->
+    <map id="nazwa_mapy" name="nazwa_mapy">
+        <area shape="rect" coords="0,0,10,10" href="index.html" alt="map-alt">
+        <!--shape-ksztalt rect-kwadrat/circle-kolo
+        coords-wspolrzedne x1,y1,x2,y2 lub x,y,r-->
+    </map>
+
+    <!--formularze-->
+    <form>
+        <input type="text" readonly="readonly" disabled="disabled" size="2"
+        maxlength="3" value="dasds" name="pytanie_1"><br>
+        <input type="password"><br>
+        <input type="checkbox" name="bill" value="nie no check" checked>bill<br>
+        <input type="radio" name="che" value="nie wybrano">nie<br>
+        <input type="radio" name="che" value="take">tak<br>
+        <select name="dsas" size="6" multiple>
+        <!--size-ile elementow widac/wybor wielu opcji moze byc multiple="multiple"-->
+            <option>opcja 1</option>
+            <option>opcja 2</option>
+            <option selected>opcja 3</option>
+            <!--moze byc selected="selected"-->
+            <option>opcja 4</option>
+            <option>opcja 5</option>
+            <option>opcja 6</option>
+        </select><br>
+        <textarea name="tes" cols="3" rows="5" wrap="virtual">max 10 znakow</textarea><br>
+        <!--wrap-zawijanie tekstu off/virtual/physical-->
+        <input type="file" name="plik"><br>
+        <input type="reset" value="czysc">
+        <input type="submit" value="przeslij">
+    </form>
+
+    <!--ramki-->
+    <frameset cols="100,25%,*">
+    <!--3 kolumny o rozmiarach 100px, 25% i *-cala reszta
+        rows wiersze-->
+        <frame src="s1.html">
+        <frame src="s2.html">
+        <frameset rows="30,*">
+            <frame src="s3.html">
+            <frame src="s4.html">
+        </frameset>
+    <noframes>
+        <body>
+            i tu tresc dla body jak frames nie zadzialaja
+        </body>
+    </noframes>
+    <body>
+
+    </body>
+    </frameset>
+</body>
+</html>
+
+<!--koniec str 54-->

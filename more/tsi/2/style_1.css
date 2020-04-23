@@ -1,0 +1,117 @@
+/*selektor uniwersalny*/
+*{
+    font-size: 20px;
+}
+/*wybieranie znacznikow po danym elemencie nw kolejnosc*/
+h2 i{
+    color: rgb(255,255,0);
+}
+/*bezposrednio w takiej kolejnosci*/
+h2 > u > i{ 
+    color: pink;
+}
+h2>i{
+    color:orangered;
+}
+/*z wpisanymi wartosciami/lub z id ktore zawiera znaki to*/
+p[align="center"], p[id~="to"]{
+    color:orange;
+}
+/*pseldoklasy/op najechaniu myszka*/
+a:hover{
+    color: aqua;
+}
+/*pseldoelement*/
+p:first-letter{
+    color: blue;
+}
+.a2{
+    white-space: pre; /*wyswitlanie spacji normal/pre/nowrap/pre-wrap/pre-line*/
+}
+
+.a1{
+    border:1px;
+    border-style: solid;
+    color:black;
+    padding: 20px;
+    margin: 20px;
+    /*inne obramowanie*/
+    outline-style: dotted;
+    outline-width: 5px;
+}
+
+img{
+    overflow: hidden; /*niemieszczaca sie zawartosc zostaje (hidden/visible/scroll/auto)*/
+}
+/*tablice*/
+.a2{
+    caption-side: top; /*pozycja tytulu top/left*/
+    border-collapse: collapse; /*obramowanie komurek separate/callapse-nachodza na siebie*/
+    empty-cells: show; /*obramowanie pustych komurek show/hide*/
+    table-layout: auto; /*szerokosc tabeli auto/fixed*/
+    border-spacing: 10px; /*odstep pomiedzy komurkami*/
+}
+
+.a3{
+    position: static; /*static-normalne/fixed-jest caly czas widoczny w tym samym miejscu*/
+    opacity: 1; /*przezroczystosc elementu od 0 do 1*/
+    position: absolute;
+    clip: rect(0px, 0px, 100px,10px);/*wytnij czesc obrazka o wymiarach gora/prawo/dol/lewo*/
+    vertical-align: baseline; /*wyrownanie do baseline/middle/text-top/text-bottom/super/sub/
+    top/bottom*/
+    display: inline; /*sposob wyswietlania np div nie tworzy juz nowych lini-inline/block-normalny/none-nie wyswietla*/
+    visibility: hidden; /*visable/hidden*/
+}
+/*pionowe menu*/
+li#zag2, ul#pio{
+    display: block;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+ul#pio{
+    width: 200px;
+}
+ul#pio a:link, ul#pio a:visited{
+    display: block;
+    width: 188px;
+    text-decoration: none;
+    background-color: #c0c0c0;
+    color: black;
+    padding: 4px;
+    border: 2px outset #c0c0c0;
+}
+ul#pio a:hover{
+    border-style: inset;
+    color: blue;
+    padding: 6px 3px 3px 6px;
+}
+/*poziome menu*/
+li#poz1, ul#poz{
+    display: block;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+ul#poz a:link, ul#poz a:visited{
+    display: block;
+    width: 188px;
+    text-decoration: none;
+    background-color: #c0c0c0;
+    color: black;
+    padding: 4px;
+    border: 2px outset #c0c0c0;
+}
+ul#poz a:hover{
+    border-style: inset;
+    color: blue;
+    padding: 6px 3px 3px 6px;
+}
+ul#poz li#poz1{
+    display: inline;
+    white-space: nowrap;
+}
+ul#poz, li#poz1{
+    float: left;
+}

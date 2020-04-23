@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <title>Rozdzialy 1</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="file.js"></script>
+    </head>
+    <body>
+        <!--<body text="green"> zmiana koloru calego tekstu-->
+
+        <!--znaki specjalne-->
+        &amp; <!--znak and &-->
+        &lt; <!--znak mniejszosci <-->
+        &gt; <!--znak wiekszosci >-->
+        &nbsp; <!--spacja-->
+
+        <big>wieksze do normalnej czcionki</big>
+        <small>mniejsze do normalnej czcionki</small>
+
+        <!--nie uzywac:
+        <big>
+        <center>
+        <font>
+        <strike>
+        <u>
+        align
+        bgcolor-->
+
+        <!--lista definicji-->
+        <dl>
+            <dt>Tytyl</dt>
+                <dd>definicja</dd>
+            <dt>tytul 2</dt>
+                <dd>definicja 2</dd>
+        </dl>
+
+        <table border="2px">
+            <tr>
+                <td colspan="2">1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td colspan="2" rowspan="2">
+                    <table border="1px">
+                        <tr>
+                            <td rowspan="2">1</td>
+                            <td colspan="2">2</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+            </tr>
+        </table>
+
+        <!--odstepu do obrazka-->
+        <img src="obrazek.gif" border="2px" hspace="40px" vspace="20px"
+        align="bottom">
+        <!--hspace-odstep prawo-lewo/vspace-odstep gora-dol
+        mozna wyrownac obraz wzgledem tekstu np bottom/middle/top/texttop-->
+
+        <!--formularze raz jeszcze-->
+        <form action="mailto:kk@gmail.com?subject=temat" method="POST" autocomplete="off">
+            <!--?subject=temat mozna pominac/autocomplete-on/off-->
+            <input type="hidden" name="ukryte" value="co kolwiek i tak nie widac">
+            <input type="button" name="nic" value="nic nie robi">
+            <button type="submit" name="przyisk">wyslij mozna wstawic tu obraz</button>
+            <label>
+                <input type="checkbox" name="che" value="zaznacz">
+                Nazwa etykiety
+            </label>
+            <!--label-etykieta jak nacisnie sie napis to zaznaczy sie od razu opcja-->
+            <fieldset>
+                <legend>Wyksztalcenie</legend>
+                <label><input type="radio" name="W" value="podstawowe" checked>
+                    podstawowe</label><br>
+                <label><input type="radio" name="W" value="srednie">srednie</label><br>
+                <label><input type="radio" name="W" value="wyzsze">wyzsze</label><br>
+            </fieldset>
+            <!--grupowanie opcji-->
+
+            <!--tworzenie pod menu-->
+            <select name="jezyki" multiple size="7">
+                <optgroup label="Jezyki slowianskie">
+                    <option>polski</option>
+                    <option>rosyjski</option>
+                    <option>ukrainski</option>
+                </optgroup>
+                <optgroup label="Jezyki germanskie">
+                    <option>angielski</option>
+                    <option>niemiecki</option>
+                </optgroup>
+                <optgroup label="inne">
+                    <option>wloski</option>
+                    <option>francuski</option>
+                </optgroup>
+            </select>
+            <input type="radio" name="klik" value="nie na wa" tabindex="0" accesskey="r">
+            1-tab i Alt+R<br>
+            <!--tabindex-kolejnosc przelaczania/accesskey-klawiesz do skrotow
+                klawiszowych Alt+r/Alt+shift+r-->
+
+            <!--sugestie do wypelnienia/required-wymagane-->
+            <input type="text" name="kosz" list="koszyk" required><br> 
+            <datalist id="koszyk">
+                <option>opcja 1</option>
+                <option>koszyk 1902</option>
+            </datalist>
+            <input type="email"><br>
+            <input type="number" min="1000" max="1050" value="1010"><br>
+            <input type="date" min="2018-01-01" max="2018-12-31"><br>
+            <input type="url"><br>
+            <input type="text" pattern="[0-9]{2}-[0-9]{3}">
+        </form>
+    </body>
+</html>
+<!--Koniec strona 40-->

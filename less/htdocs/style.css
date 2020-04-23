@@ -1,0 +1,124 @@
+/*selektor uniwersalny/wybiera wszystko
+*{}*/
+
+/*wybieranie znaczników w danym elemencie nieważna kolejność
+h2 i{}*/
+
+/*bezpośrednio w takiej kolejności
+h2 > u > i{}
+h2>i{}*/
+
+/*z wpisanymi wartościami/lub z id które zawiera znaki ''
+p[align='center'], p[id~='to']{}*/
+
+/*pseldoklasa/po najechaniu myszką
+a:hover{}*/
+
+/*pseldoelement
+p:first-letter{}*/
+
+/*edycja klasy tylko dla znacznika p
+p.klasa_1{}*/
+
+/*edycja klasy dla wszystkich
+.klasa_2{}*/
+
+/*identyfikator przypisany
+p#ne_p{}*/
+
+/*identyfikator uniwersalny
+#ne{}*/
+
+*{
+  margin:0px;
+  padding: 0px;
+}
+
+.czcionka{
+  font-family: Arial;
+  font-size: 10px;
+  font-weight: 900;
+  color: blue;
+  text-align: center; /*center/left/right/justify*/
+  line-height: 1px;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  text-decoration: blink; /* blink/line-through/underline/overline/none*/
+  text-indent: 10px;
+  text-transform: uppercase; /*uppercase/lowercase/capitalize/none*/
+  white-space: pre; /*wyświtlanie spacji normal/pre/nowrap/pre-wrap/pre-line*/
+}
+
+.tlo{
+  background: none;
+  background-attachment: fixed; /*przewijanie obrazu razem ze stroną fixed/scroll*/
+  background-color: #ffff00;
+  background-image: url('grafika_1.png');
+  background-position: center; /*center/top/left/right/bottom/left top*/
+  background-repeat: no-repeat; /*powtarzanie obrazka repeat/repeat-y/repeat-x/no-repeat*/
+
+  margin:10px,2px,100px,12px;
+  /*4-wartości(top/right/bottom/left)/3-wartości(top/left-right/bottom)/2-wartości(top-bottom/left-right)*/
+  margin-bottom: 120px;
+  padding: 32px;
+
+  cursor: crosshair; /*auto/crosshair/default/pointer/move/(e/ne/nw/n/se/sw/s/w)-resize/text/wait/help*/
+
+  height: 30%;
+  width: 100px;
+  opacity: 1;
+}
+
+.img{
+  position: static; /*static/fixed-jest cały czas widoczny w tym samym miejscu*/
+  position: absolute;
+  clip: rect(0px, 0px, 100px,10px); /*wytnij cześć obrazka o wymiarach góra/prawo/dół/lewo*/
+  vertical-align: baseline; /*wyrównanie do baseline/middle/text-top/text-bottom/super/sub/top/bottom*/
+  display: inline; /*sposób wyświetlania np div nie tworzy już nowych lini-inline/block-normalny/none*/
+  visibility: hidden; /*visable/hidden*/
+  overflow: hidden; /*niemieszcząca się zawartość zostanie (hidden/visible/scroll/auto)*/
+}
+
+.obramowanie{
+  border: 1px; /*tylko wielkość*/
+  border-color: rgb(0, 255, 0);
+  border-top-color: brown; /*top/left/right/bottom*/
+  border-style: solid; /*solid/hidden/none/dotted/dashed/double/groove/ridge/outset/inset*/
+  border-width: 10px;
+
+  /*inne obramowanie*/
+  outline-style: dotted;
+  outline-width: 5px;
+
+  caption-side: top; /*top/left*/
+  border-collapse: collapse; /*obramowanie komurek separate/callapse*/
+  empty-cells: show; /*oshow/hide*/
+  table-layout: auto; /*szerokość tabeli auto/fixed*/
+  border-spacing: 10px;
+}
+
+a:link, a:visited, a:hover, a:active{
+  /*na stronie, odwiedzony, najechany myszka, przy kliknięciu*/
+  color:black;
+}
+
+.listy{
+  list-style-type: circle; /*disc/circle/square/decimal/lower-roman/upper-roman/lower-alpha/
+  lower-greek/lower-latin/hebrew/armenian/georgian/cjk-ideographic/hiragana*/
+  list-style-position: inside; /*inside/outside*/
+  list-style-image: url(grafika_1.png);
+}
+
+div.panel{
+  float: left;
+}
+div.stopka{
+  clear: both;
+}
+
+#pozycja_absolutna_i_relatywna{
+  position: absolute; /*absolute/relative-względem pozycji początkowej*/
+  top: 30px;
+  left: 30px; /*ustaw 30px od lewej górnej krawędzi przeglądarki*/
+  z-index: 1; /*im wyższa liczba tym mniej elementów może go zasłonić*/
+}

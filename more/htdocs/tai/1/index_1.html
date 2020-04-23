@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <title>formularz</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <form name="formul" method="POST" action="php_1.php" ENCTYPE="multipart/form-data">
+      <!--action="http://localhost/tai/1/php_1.php"-->
+      <input type="hidden" name="max_file_size" value="40960">
+      login:<input type="text" name="login"><br>
+      haslo:<input type="password" name="pass"><br>
+      <input type="checkbox" name="wynik[]" value="kot">kot<br>
+      <input type="checkbox" name="wynik[]" value="pies">pies<br>
+      <input type="checkbox" name="wynik[]" value="kurczak">kurczak<br>
+      <input type="radio" name="kolec" value="tak">tak<br>
+      <input type="radio" name="kolec" value="nie">nie<br>
+      <input type="file" name="plik" size="30"><br>
+      <input type="submit">  
+    </form>
+  </body>
+</html>
